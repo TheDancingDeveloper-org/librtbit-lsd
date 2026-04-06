@@ -4,15 +4,15 @@ version = "0.1.0"
 edition = "2024"
 description = "BEP 14 Local Service Discovery for the rtbit BitTorrent client"
 license = "MIT"
-repository = "https://github.com/AusAgentSmith-org/librtbit-lsd"
+repository = "http://100.92.54.45:3002/indexarr/librtbit-lsd"
 
 [dependencies]
 anyhow = "1"
 librqbit-dualstack-sockets = "0.7"
 tokio = { version = "1", features = ["time"] }
 tokio-util = "0.7"
-sha1w = { git = "https://github.com/AusAgentSmith-org/librtbit-sha1-wrapper.git", tag = "v0.1.0", package = "librtbit-sha1-wrapper" }
-librtbit-core = { git = "https://github.com/AusAgentSmith-org/librtbit-core.git", tag = "v0.1.0" }
+sha1w = { git = "http://100.92.54.45:3002/indexarr/librtbit-sha1-wrapper.git", tag = "v0.1.0", package = "librtbit-sha1-wrapper" }
+librtbit-core = { git = "http://100.92.54.45:3002/indexarr/librtbit-core.git", tag = "v0.1.0" }
 rand = "0.9"
 futures = "0.3"
 bstr = "1"
