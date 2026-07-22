@@ -11,8 +11,8 @@ anyhow = "1"
 librqbit-dualstack-sockets = "0.7"
 tokio = { version = "1", features = ["time"] }
 tokio-util = "0.7"
-sha1w = { git = "http://100.92.54.45:3002/indexarr/librtbit-sha1-wrapper.git", tag = "v0.1.0", package = "librtbit-sha1-wrapper" }
-librtbit-core = { git = "http://100.92.54.45:3002/indexarr/librtbit-core.git", tag = "v0.1.0" }
+sha1w = { version = "0.1.2", registry = "forgejo", package = "librtbit-sha1-wrapper" }
+librtbit-core = { version = "0.1.5", registry = "forgejo" }
 rand = "0.9"
 futures = "0.3"
 bstr = "1"
@@ -22,7 +22,7 @@ atoi = "2"
 tracing = "0.1"
 
 [dev-dependencies]
-tracing-subscriber = { version = "0.3", default-features = false }
+tracing-subscriber = { version = "0.3", default-features = false, features = ["fmt"] }
 
 [lints.clippy]
 all = { level = "warn", priority = -1 }
