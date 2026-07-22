@@ -12,6 +12,8 @@ permissions:
 jobs:
   rust:
     runs-on: [self-hosted, node-b, linux, x64]
+    env:
+      CARGO_NET_GIT_FETCH_WITH_CLI: "true"
     steps:
       - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
@@ -30,6 +32,7 @@ jobs:
           printf '[registries.forgejo]\ntoken = "Bearer %s"\n' "$FORGEJO_CARGO_TOKEN" > "$CARGO_HOME/credentials.toml"
           chmod 600 "$CARGO_HOME/credentials.toml"
           printf 'CARGO_HOME=%s\n' "$CARGO_HOME" >> "$GITHUB_ENV"
+          git config --global url."http://git:${FORGEJO_CARGO_TOKEN}@100.92.54.45:3002/".insteadOf "http://100.92.54.45:3002/"
       - run: cargo fmt --all -- --check
       - run: cargo check --workspace
       - run: cargo test --workspace
