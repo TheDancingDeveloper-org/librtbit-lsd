@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   rust:
-    runs-on: [self-hosted, node-b, linux, x64]
+    runs-on: [self-hosted, tailnet, linux, x64]
     env:
       CARGO_NET_GIT_FETCH_WITH_CLI: "true"
     steps:
